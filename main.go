@@ -24,14 +24,16 @@ func main() {
 		if challenge == 1 {
 			var s string
 			fmt.Scanf("%s", &s)
-			v, err := set1.ToBase64(s)
-			if err != nil {
-				fmt.Println(err)
-				os.Exit(1)
-			}
-
+			v, _ := set1.ToBase64(s)
 			fmt.Println(v)
 			return
+		}
+
+		if challenge == 2 {
+			var a, b string
+			fmt.Scanf("%s %s", &a, &b)
+			v, _ := set1.Xor(a, b)
+			fmt.Println(v)
 		}
 	}
 }
