@@ -35,5 +35,12 @@ func main() {
 			v, _ := set1.Xor(a, b)
 			fmt.Println(v)
 		}
+
+		if challenge == 3 {
+			var a string
+			fmt.Scanf("%s", &a)
+
+			fmt.Println(set1.SingleByteXor(a))
+		}
 	}
 }
