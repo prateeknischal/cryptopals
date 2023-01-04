@@ -11,7 +11,7 @@ func BytesToHex(b []byte) string {
 	var s strings.Builder
 
 	for i := 0; i < len(b); i++ {
-		s.WriteString(fmt.Sprintf("%x", b[i]))
+		s.WriteString(fmt.Sprintf("%02x", b[i]))
 	}
 
 	return s.String()

@@ -55,7 +55,7 @@ func ToBase64(h string) (string, error) {
 		secondByte := ((byte(b[i]) & 0x3) << 0x4) | (byte(b[i+1]) >> 0x4)
 
 		// last 4 bits from b[i + 1] || first 2 bits from b[i + 2]
-		thirdByte := ((byte(b[i+1]) & 0xf) << 0x2) | (byte(b[i+2]) >> 0x6)
+		thirdByte := ((byte(b[i+1]) & 0xf) << 0x4) | (byte(b[i+2]) >> 0x6)
 
 		// last 6 bits from b[i + 2]
 		fouthByte := byte(b[i+2]) & mask
