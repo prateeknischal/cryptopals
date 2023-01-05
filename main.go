@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"io"
 	"os"
 
 	"github.com/prateeknischal/cryptopals/set1"
@@ -40,7 +41,22 @@ func main() {
 			var a string
 			fmt.Scanf("%s", &a)
 
-			fmt.Println(set1.SingleByteXor(a))
+			res, _ := set1.SingleByteXor(a)
+			fmt.Println(res)
+		}
+
+		if challenge == 4 {
+			var f string
+			var r io.Reader
+			var err error
+
+			fmt.Scanf("%s", &f)
+
+			if r, err = os.Open(f); err != nil {
+				os.Exit(1)
+			}
+
+			fmt.Println(set1.FindXoredString(r))
 		}
 	}
 }
