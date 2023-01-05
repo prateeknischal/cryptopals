@@ -1,6 +1,8 @@
 package set1
 
-import "strings"
+import (
+	"strings"
+)
 
 var letterDistribution = map[string]float64{
 	"a": 0.0651738, "b": 0.0124248, "c": 0.0217339, "d": 0.0349835, "e": 0.1041442, "f": 0.0197881, "g": 0.0158610,
@@ -25,7 +27,10 @@ func SingleByteXor(s string) (string, float64) {
 	var m = make(map[string]float64)
 
 	for i := 1; i <= 255; i++ {
-		cipherText, _ := HexToBytes(s)
+		cipherText, err := HexToBytes(s)
+		if err != nil {
+			panic(err)
+		}
 		plainText := make([]byte, len(cipherText))
 
 		for j := 0; j < len(cipherText); j++ {

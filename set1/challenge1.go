@@ -24,7 +24,7 @@ func HexToBytes(s string) ([]byte, error) {
 	var b []byte
 
 	for i := 0; i < len(s); {
-		n, e := strconv.ParseInt(s[i:i+2], 16, 8)
+		n, e := strconv.ParseUint(s[i:i+2], 16, 8)
 		if e != nil {
 			return nil, errors.Wrap(e, "Invalid byte")
 		}
