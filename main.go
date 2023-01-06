@@ -58,5 +58,17 @@ func main() {
 
 			fmt.Println(set1.FindXoredString(r))
 		}
+
+		if challenge == 5 {
+			p := "Burning 'em, if you ain't quick and nimble" + "\n" + "I go crazy when I hear a cymbal"
+			k := "ICE"
+
+			res, err := set1.RepeatingKeyXor(p, k)
+			if err != nil {
+				panic(err)
+			}
+
+			fmt.Println(res)
+		}
 	}
 }
